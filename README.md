@@ -1,75 +1,64 @@
-User Management REST API (Spring Boot)
+# User Management REST API
 
-📌 Project Overview
+This project is a Spring Boot REST API designed to manage basic user operations.
+The system allows users to register, login, and retrieve user data by ID.
 
-This project is a simple REST API for User Management built using Spring Boot.
-The API provides basic functionalities such as User Registration, User Login, and Get User by ID.
+The API focuses on implementing backend fundamentals, layered architecture, and service-based validation logic without using database persistence.
 
-This assignment focuses on understanding backend logic, API design, and layered architecture, without using database persistence yet.
+---
 
-⚠️ Note: This project does not use JPA or SQL yet.
-Data handling and validation logic are implemented at the service level.
+# Tech Stack
+- Java
+- Spring Boot
+- Spring Web
+- Lombok
+- Maven
+- Postman
 
-🧱 Project Architecture
+---
 
-This project applies a layered architecture to separate responsibilities clearly.
+# Business Flow
 
-Controller → Service → DTO → Model
+1. User submits registration data
+2. System validates input data in the Service layer
+3. User data is stored temporarily (in-memory simulation)
+4. User logs in using registered credentials
+5. System validates login data
+6. User retrieves data using user ID
 
-Layer Explanation
-1. Controller
-- Defines REST API endpoints
-- Handles incoming HTTP requests and outgoing responses
-- Does not contain business logic
+## Business Flow Summary
 
-2. Service
-- Contains all business logic and validation
-- Handles register, login, and data processing
-- Acts as the core of application logic
+User → Register → Login → Get User Data
 
-3. DTO (Data Transfer Object)
-- Used to store and transfer request data
-- Acts as a temporary data container
-- Prevents direct manipulation of the model
+---
 
-4. Model
-- Represents data structure (similar to a form)
-- Used as a representation of user data
-- Not yet connected to a database
+# System Flow
 
-🚀 API Features
+The system follows a layered architecture.
 
-1️⃣ Register User
-Allows users to submit registration data.
-All validation and processing logic are handled in the Service layer.
+Client Request  
+↓  
+Controller (Handle HTTP Request)  
+↓  
+Service Layer (Business Logic & Validation)  
+↓  
+DTO / Model Processing  
+↓  
+Response returned to Client  
 
-Endpoint :
-POST /register
+---
 
-2️⃣ Login User
-Allows users to log in using their credentials.
-Login validation and logic are handled in the Service layer.
+# API Endpoints
 
-Endpoint :
-POST /login
+POST /register  
+POST /login  
+GET /users/{id}  
 
-3️⃣ Get User by ID
+---
 
-Retrieves user data based on a specific user ID.
+# Author
 
-Endpoint :
-GET /users/{id}
+Faisha Fasha Natasya Putri  
 
-⚙️ Validation & Logic
-All validation logic is implemented inside the Service layer
-Controllers are kept thin and only responsible for request/response handling
-DTOs are used to store input data before processing
-
-
-
-🎯 Purpose of This Project
-Practice building REST APIs using Spring Boot
-Understand backend layering and separation of concerns
-Learn how to structure Controller, Service, DTO, and Model
-Prepare a foundation before integrating database (JPA & SQL)
-
+GitHub: https://github.com/faishafashanp  
+LinkedIn: https://www.linkedin.com/in/faishafasha  
